@@ -1,10 +1,18 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StatusBar } from "react-native";
+import HomeMap from "../../components/HomeMap";
+import CovidMessage from "../../components/CovidMessage/CovidMessage";
+import HomeSearch from "../../components/HomeSearch";
 
 const HomeScreen = () =>{
     return(
         <View>
-            <Text>Just a Text</Text>
+            <StatusBar
+                backgroundColor={"#a0abff"}
+            />
+            <HomeMap/>
+            <CovidMessage/>
+            <HomeSearch/>
         </View>
     )
     
