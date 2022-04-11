@@ -10,14 +10,14 @@ const DestinationSearch = () => {
     const [originPlace, setOriginPlace] = useState('')
     const [destinationPlace, setDestinationPlace] = useState('')
 
-    useEffect(() => {
-        console.warn(data= 'useEffect is called')
-        if(originPlace && destinationPlace){
-            console.warn(data='Redirect to results')
-        }
+    // useEffect(() => {
+    //     console.warn(data= 'useEffect is called')
+    //     if(originPlace && destinationPlace){
+    //         console.warn(data='Redirect to results')
+    //     }
 
 
-    });
+    // });
 
     
     return(
@@ -48,6 +48,7 @@ const DestinationSearch = () => {
             <GooglePlacesAutocomplete
                 placeholder='Where to?'
                 onPress={(data=GooglePlaceData, details=GooglePlaceDetail) => {
+                    console.log(data)
                     setDestinationPlace( value={data,details})
                 }}
                 styles={{
