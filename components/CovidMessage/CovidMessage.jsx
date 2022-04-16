@@ -6,13 +6,13 @@ const CovidMessage = () =>{
     return(
         <View style={styles.container}>
             <Text style={styles.title}>
-                Travel only if necessary
+                Aplicação de teste
             </Text>
             <Text style={styles.text}>
-                Upgrading this dfannnnnnnnnnnaasfdblçjnswAOVNweovniowEVNLIwenvlkjWENVKNweivnlkuvwenlkewNVKLUWenilon
+                Essa é apenas uma aplicação de teste, e está sujeita a bugs
             </Text>
             <Text style={styles.learnMore}>
-                Learn more
+                Esteja ciente
             </Text>
         </View>
     )

@@ -4,11 +4,13 @@ import HomeScreen from './screens/HomeScreen';
 // import DestinationSearch from './screens/DestinationSearch';
 import HomeMap from './components/HomeMap'
 import SearchResults from './screens/SearchResults';
+import DestinationSearch from "./screens/DestinationSearch"
 
 export default function App() {
   return (
-    // <HomeScreen/>
-    <SearchResults/>
+    <HomeScreen/>
+    // <SearchResults/>
+    // <DestinationSearch/>
   );
 }
 

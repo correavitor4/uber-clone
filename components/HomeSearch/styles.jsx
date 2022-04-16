@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+    
     inputBox:{
         backgroundColor: "#e7e7e7",
         margin:8,

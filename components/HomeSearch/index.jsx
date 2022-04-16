@@ -9,7 +9,7 @@ import Entypo from "react-native-vector-icons/Entypo"
 
 const HomeSearch = () => {
     return(
-        <View>
+        <View >
             <View style={styles.inputBox}>
                 <Text style={styles.inputText}>Where to?</Text>
                 <View style={styles.timeContainer}>
@@ -23,14 +23,14 @@ const HomeSearch = () => {
                 <View style={styles.iconContainer}>
                     <AntDesign name={'clockcircle'} size={20} color={'white'}/>
                 </View>
-                <Text style={styles.destinationText}>Boate Azul</Text>
+                <Text style={styles.destinationText}>Parque Ipirange</Text>
             </View>
 
             <View style={styles.row}>
                 <View style={[styles.iconContainer,{backgroundColor:'#218ccf'}]}>
                     <Entypo name={'home'} size={20} color={'white'}/>
                 </View>
-                <Text style={styles.destinationText}>Boate Azul</Text>
+                <Text style={styles.destinationText}>Anashopping</Text>
             </View>
         </View>
     )
