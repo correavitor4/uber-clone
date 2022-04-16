@@ -7,9 +7,13 @@ import styles from "./styles";
 
 const SearchResults = () =>{
     return(
-        <View>
-            <HomeMap/>
-            <UberTypes/>
+        <View style={styles.mainContainer}>
+            <View style={styles.mapContainer}>
+                <HomeMap/>
+            </View>
+            <View style={styles.searchContainer}>
+                <UberTypes/>
+            </View>
         </View>
     )
 }

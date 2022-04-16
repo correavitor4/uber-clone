@@ -10,7 +10,7 @@ const UberTypes = ()=>{
         console.warn(data= 'confirm')
     }
     return(
-        <View>
+        <View style={{height:"100%"}}>
             {typesData.map(type=> <UberTypeRow type={type}/>)}
             
             <Pressable onPress={confirm} style={{
