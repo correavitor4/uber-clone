@@ -8,8 +8,8 @@ import DestinationSearch from "./screens/DestinationSearch"
 
 export default function App() {
   return (
-    <HomeScreen/>
-    // <SearchResults/>
+    // <HomeScreen/>
+    <SearchResults/>
     // <DestinationSearch/>
   );
 }
