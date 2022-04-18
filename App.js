@@ -9,8 +9,8 @@ import DestinationSearch from "./screens/DestinationSearch"
 export default function App() {
   return (
     // <HomeScreen/>
-    <SearchResults/>
-    // <DestinationSearch/>
+    // <SearchResults/>
+    <DestinationSearch/>
   );
 }
 
