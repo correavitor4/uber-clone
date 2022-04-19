@@ -4,13 +4,14 @@ import { StatusBar } from "react-native";
 import styles from "./styles";
 import { GooglePlacesAutocomplete, GooglePlaceData } from "react-native-google-places-autocomplete";
 import PlaceRow from "./PlaceRow";
-
+import * as Location from 'expo-location'
 const DestinationSearch = () => {
+    
     const [fromText, setFromText] = useState('')
     const [destinationText, setDestinationText] = useState('')
     const [originPlace, setOriginPlace] = useState('')
     const [destinationPlace, setDestinationPlace] = useState('')
-
+   
     // useEffect(() => {
     //     console.warn(data= 'useEffect is called')
     //     if(originPlace && destinationPlace){
@@ -21,8 +22,24 @@ const DestinationSearch = () => {
     // });
 
 
-    const [currentLatitude, setLatitude] = useState(0);
-    const [currentLongitude, setLongitude] = useState(0);
+    const [currentLatitude, setLatitude] = useState(Location.latitude);
+    const [currentLongitude, setLongitude] = useState(Location.longitude);
+
+    useEffect(() => {
+        (async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+            setErrorMsg('Permission to access location was denied');
+            return;
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+        setLatitude(location.coords.latitude);
+        setLongitude(location.coords.longitude);
+
+        })();
+    }, []);
+
 
     const [errorMsg, setErrorMsg] = useState(0);
 
@@ -63,6 +80,8 @@ const DestinationSearch = () => {
                             onPress={(data=GooglePlaceData, details=GooglePlaceDetail) => {
                                 setOriginPlace( value={data,details})
                             }}
+                            currentLocation={true}
+                            currentLocationLabel='Current Location'
                             styles={{
                                 textInput: styles.textInput,
                                 container:{
@@ -123,6 +142,7 @@ const DestinationSearch = () => {
                             language: 'en',
                             }}
                             renderRow={(data=GooglePlacesAutocomplete.details)=> <PlaceRow data={data}/>}
+        
                         />
                     </View>
                     
