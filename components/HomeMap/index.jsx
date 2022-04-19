@@ -61,8 +61,10 @@ const HomeMap = () =>{
             {/* <Text>I am map</Text> */}
             
             <MapView
+                
                 provider={PROVIDER_GOOGLE} // remove if not using Google Maps
                 style={styles.map}
+                 
                 region={{
                     latitude: currentLatitude,
                     longitude: currentLongitude,
@@ -70,22 +72,22 @@ const HomeMap = () =>{
                     longitudeDelta: 0.0121,
                 }}
                 >
-            {cars.map((car)=>(
-                <Marker key={car.id}
-                coordinate={{latitude:car.latitude, longitude:car.longitude}}>
-                    <Image
-                        source={getCarImage(car.type)}
-                        style={{
-                            width:50,
-                            height:50,
-                            resizeMode:'contain',
-                            transform:[{
-                                rotate:`${car.heading}deg`,
-                            }]
-                        }}
-                    />
-                </Marker>
-            ))}
+                {cars.map((car)=>(
+                    <Marker key={car.id}
+                    coordinate={{latitude:car.latitude, longitude:car.longitude}}>
+                        <Image
+                            source={getCarImage(car.type)}
+                            style={{
+                                width:50,
+                                height:50,
+                                resizeMode:'contain',
+                                transform:[{
+                                    rotate:`${car.heading}deg`,
+                                }]
+                            }}
+                        />
+                    </Marker>
+                ))}
             
             </MapView>
         </View>
