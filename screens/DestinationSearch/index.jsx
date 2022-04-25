@@ -5,8 +5,12 @@ import styles from "./styles";
 import { GooglePlacesAutocomplete, GooglePlaceData } from "react-native-google-places-autocomplete";
 import PlaceRow from "./PlaceRow";
 import * as Location from 'expo-location'
+import { useNavigation } from '@react-navigation/native'
+
 const DestinationSearch = () => {
     
+    const navigation = useNavigation()
+
     // Location.enableHighAccuracyLocation()
     const [fromText, setFromText] = useState('')
     const [destinationText, setDestinationText] = useState('')
@@ -17,6 +21,10 @@ const DestinationSearch = () => {
         console.warn('useEffect is called')
         if(originPlace && destinationPlace){
             console.warn('Redirect to results')
+            navigation.navigate('SearchResults',{
+                originPlace,
+                destinationPlace,
+            })
         }
 
 
@@ -44,20 +52,7 @@ const DestinationSearch = () => {
 
     const [errorMsg, setErrorMsg] = useState(0);
 
-    useEffect(() => {
-        (async () => {
-        let { status } = await Location.requestForegroundPermissionsAsync();
-        if (status !== 'granted') {
-            setErrorMsg('Permission to access location was denied');
-            return;
-        }
-
-        let location = await Location.getCurrentPositionAsync({});
-        setLatitude(location.coords.latitude);
-        setLongitude(location.coords.longitude);
-
-        })();
-        }, []);
+    
     
     return(
         <View style={styles.container}>
@@ -79,7 +74,7 @@ const DestinationSearch = () => {
                         <GooglePlacesAutocomplete
                             placeholder='From'
                             onPress={(data=GooglePlaceData, details=GooglePlaceDetail) => {
-                                setOriginPlace( value={data,details})
+                                setOriginPlace( {data,details})
                             }}
                             currentLocation={true}
                             currentLocationLabel='Current Location'
@@ -117,7 +112,7 @@ const DestinationSearch = () => {
                             placeholder='Where to?'
                             onPress={(data=GooglePlaceData, details=GooglePlaceDetail) => {
                                 // console.log(data)
-                                setDestinationPlace( value={data,details})
+                                setDestinationPlace( {data,details})
                             }}
                             styles={{
                                 textInput: styles.textInput,
