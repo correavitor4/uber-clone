@@ -7,19 +7,20 @@ import PlaceRow from "./PlaceRow";
 import * as Location from 'expo-location'
 const DestinationSearch = () => {
     
+    // Location.enableHighAccuracyLocation()
     const [fromText, setFromText] = useState('')
     const [destinationText, setDestinationText] = useState('')
     const [originPlace, setOriginPlace] = useState('')
     const [destinationPlace, setDestinationPlace] = useState('')
    
-    // useEffect(() => {
-    //     console.warn(data= 'useEffect is called')
-    //     if(originPlace && destinationPlace){
-    //         console.warn(data='Redirect to results')
-    //     }
+    useEffect(() => {
+        console.warn('useEffect is called')
+        if(originPlace && destinationPlace){
+            console.warn('Redirect to results')
+        }
 
 
-    // });
+    });
 
 
     const [currentLatitude, setLatitude] = useState(Location.latitude);
@@ -115,7 +116,7 @@ const DestinationSearch = () => {
                         <GooglePlacesAutocomplete
                             placeholder='Where to?'
                             onPress={(data=GooglePlaceData, details=GooglePlaceDetail) => {
-                                console.log(data)
+                                // console.log(data)
                                 setDestinationPlace( value={data,details})
                             }}
                             styles={{
