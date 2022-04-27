@@ -4,9 +4,10 @@ import HomeMap from "../../components/HomeMap";
 import CovidMessage from "../../components/CovidMessage/CovidMessage";
 import HomeSearch from "../../components/HomeSearch";
 import styles from "./styles";
+// import FloatingButton from "../../Navigation/FloatingButton";
 
 
-const HomeScreen = () =>{
+const HomeScreen = ({drawer}) =>{
     return(
         <View style={styles.mainContainer}>
             
@@ -19,7 +20,7 @@ const HomeScreen = () =>{
             <View style={styles.homeSearchContainer}>
                 <HomeSearch/>
             </View>
-
+            {/* <FloatingButton drawer={drawer}/> */}
             
         </View>
     )

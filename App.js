@@ -5,8 +5,9 @@ import HomeScreen from './screens/HomeScreen';
 import HomeMap from './components/HomeMap'
 import SearchResults from './screens/SearchResults';
 import DestinationSearch from "./screens/DestinationSearch"
+import HomeNavigator from './Navigation/Home'
 import RootNavigator from './Navigation/Root';
-
+import 'react-native-gesture-handler';
 
 
 export default function App() {

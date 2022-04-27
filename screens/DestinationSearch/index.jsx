@@ -18,7 +18,6 @@ const DestinationSearch = () => {
     const [destinationPlace, setDestinationPlace] = useState('')
    
     useEffect(() => {
-        console.warn('useEffect is called')
         if(originPlace && destinationPlace){
             console.warn('Redirect to results')
             navigation.navigate('SearchResults',{
