@@ -19,7 +19,7 @@ const HomeNavigator = ({drawer}) => {
         }}
         initialRouteName={"Home"}
         >
-            <Stack.Screen name={"Home"} >
+            <Stack.Screen name={"HomeScreen"} >
                 {()=><HomeScreen drawer={drawer}/>}
             </Stack.Screen>
             <Stack.Screen name={"DestinationSearch"} component={DestinationSearch}/>
