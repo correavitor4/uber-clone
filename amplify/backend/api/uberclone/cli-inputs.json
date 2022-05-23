@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "uberclone",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "E:\\Projetos\\Trabalho\\uber-clone\\amplify\\backend\\api\\uberclone\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authubercloneab9b0519ab9b0519"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2022-05-29T19:46:01.326Z",
+        "keyDescription": ""
+      }
+    ]
+  }
+}

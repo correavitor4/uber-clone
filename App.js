@@ -8,17 +8,25 @@ import DestinationSearch from "./screens/DestinationSearch"
 import HomeNavigator from './Navigation/Home'
 import RootNavigator from './Navigation/Root';
 import 'react-native-gesture-handler';
+import { Amplify } from 'aws-amplify'
+import awsconfig from './src/aws-exports'
+import {withAuthenticator} from 'aws-amplify-react-native'
+import React from 'react';
+Amplify.configure(awsconfig)
 
 
-export default function App() {
-  return (
-    // <HomeScreen/>
-    <RootNavigator/>
-    // <SearchResults/>
-    // <DestinationSearch/>
-  );
+class App extends React.Component {
+  render(){
+    return (
+      // <HomeScreen/>
+      <RootNavigator/>
+      // <SearchResults/>
+      // <DestinationSearch/>
+    );
+  }
 }
 
+export default withAuthenticator(App)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
