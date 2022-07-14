@@ -7,6 +7,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from '../screens/HomeScreen'
 import DestinationSearch from "../screens/DestinationSearch";
 import SearchResults from "../screens/SearchResults";
+import SelectDriverOrPassenger from "../screens/SelectDriverOrPassenger";
 
 const Stack = createStackNavigator()
 
@@ -19,9 +20,10 @@ const HomeNavigator = ({drawer}) => {
         }}
         initialRouteName={"Home"}
         >
-            <Stack.Screen name={"HomeScreen"} >
-                {()=><HomeScreen drawer={drawer}/>}
+            <Stack.Screen name={"InitialScreen"}>
+                {()=><SelectDriverOrPassenger drawer={drawer}/>}
             </Stack.Screen>
+            <Stack.Screen name={"HomeScreen"} component={HomeScreen}/>
             <Stack.Screen name={"DestinationSearch"} component={DestinationSearch}/>
             <Stack.Screen name={"SearchResults"} component={SearchResults}/>
         </Stack.Navigator>

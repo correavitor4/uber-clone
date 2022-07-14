@@ -33,7 +33,7 @@ const SearchingPassengers = ()=>{
         <View style={styles.searchingPeopleContainer}>
             <View style={styles.passengerIconContainer}>
                 <Ionicons name={'man-outline'} size={90} color={"black"}/>
-                <Text style={{marginTop:20,fontSize:25}}>Buscando pasageiros</Text>
+                <Text style={{marginTop:20,fontSize:25}}>Buscando passageiros</Text>
             </View> 
         </View>
     )

@@ -9,14 +9,18 @@ import HomeNavigator from './Navigation/Home'
 import RootNavigator from './Navigation/Root';
 import 'react-native-gesture-handler';
 import DriverScreen from './screens/DriverScreen';
+import RegisterNewDriver from './screens/RegisterNewDriver';
+import SelectDriverOrPassenger from './screens/SelectDriverOrPassenger';
 
 export default function App() {
   return (
     // <HomeScreen/>
-    // <RootNavigator/>
+    <RootNavigator/>
     // <SearchResults/>
     // <DestinationSearch/>
-    <DriverScreen/>
+    // <DriverScreen/>
+    // <RegisterNewDriver/>
+    // <SelectDriverOrPassenger/>
   );
 }
 
