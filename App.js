@@ -8,14 +8,15 @@ import DestinationSearch from "./screens/DestinationSearch"
 import HomeNavigator from './Navigation/Home'
 import RootNavigator from './Navigation/Root';
 import 'react-native-gesture-handler';
-
+import DriverScreen from './screens/DriverScreen';
 
 export default function App() {
   return (
     // <HomeScreen/>
-    <RootNavigator/>
+    // <RootNavigator/>
     // <SearchResults/>
     // <DestinationSearch/>
+    <DriverScreen/>
   );
 }
 
