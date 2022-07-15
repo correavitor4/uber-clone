@@ -3,16 +3,18 @@ import { View, Text, StatusBar, Pressable } from "react-native";
 import HomeMap from "../../components/HomeMap";
 import styles from "./styles";
 import Ionicons from "react-native-vector-icons/Ionicons"
-import { useRoute } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import RouteMap from "../../components/RouteMap";
 
 
 
 
-const DriverScreen = ()=>{
+const DriverScreen = ({route})=>{
     const [content,setContent] = useState(SearchingPassengers)
     const [mapContainerContent,setMapContainerContent] = useState(MapHomeWithPassengers)
-    
+    const driverName = route.params.driverName
+
+    // console.log(route.params.driverName)
     return(
         <View>
             <View style={styles.mainContainer}>

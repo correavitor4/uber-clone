@@ -8,6 +8,8 @@ import HomeScreen from '../screens/HomeScreen'
 import DestinationSearch from "../screens/DestinationSearch";
 import SearchResults from "../screens/SearchResults";
 import SelectDriverOrPassenger from "../screens/SelectDriverOrPassenger";
+import RegisterNewDriver from "../screens/RegisterNewDriver";
+import DriverScreen from "../screens/DriverScreen";
 
 const Stack = createStackNavigator()
 
@@ -26,6 +28,8 @@ const HomeNavigator = ({drawer}) => {
             <Stack.Screen name={"HomeScreen"} component={HomeScreen}/>
             <Stack.Screen name={"DestinationSearch"} component={DestinationSearch}/>
             <Stack.Screen name={"SearchResults"} component={SearchResults}/>
+            <Stack.Screen name={"RegisterNewDriver"} component={RegisterNewDriver}/>
+            <Stack.Screen name={"DriverScreen"} component={DriverScreen}/>
         </Stack.Navigator>
     )
 }
